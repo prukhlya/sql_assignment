@@ -1,0 +1,112 @@
+Query the Data:
+
+1. Select all teachers:
+
+SELECT `teacher`.`teacher_id`,
+    `teacher`.`name_first`,
+    `teacher`.`name_last`,
+  
+  `teacher`.`age`,
+    `teacher`.`salary`
+FROM `bunch_of_sqls_assignment`.`teacher`;
+
+
+2. Select all classes:
+
+SELECT `class`.`class_id`,
+    `class`.`name`,
+    `class`.`description`,
+    
+`class`.`teacher_id`
+FROM `bunch_of_sqls_assignment`.`class`;
+
+3. SELECT all students:
+
+SELECT `student`.`student_id`,
+    `student`.`name_first`,
+    `student`.`name_last`,
+   
+`student`.`grade`,
+    `student`.`gpa`
+FROM `bunch_of_sqls_assignment`.`student`;
+
+
+4. SELECT all classes for teacher 1:
+
+SELECT * FROM bunch_of_sqls_assignment.class;SELECT `class`.`class_id`,
+    `class`.`name`,
+    `class`.`description`,
+    
+`class`.`teacher_id`
+FROM `bunch_of_sqls_assignment`.`class`
+where teacher_id = 1
+
+5. SELECT all students for class 1:
+
+SELECT `class_student`.`class_student_id`,
+    `class_student`.`class_id`,
+    
+`class_student`.`student_id`
+FROM `bunch_of_sqls_assignment`.`class_student`
+where class_id = 1
+
+
+6. SELECT all classes for student 1:
+
+SELECT `class_student`.`class_student_id`,
+    `class_student`.`class_id`,
+   
+ `class_student`.`student_id`
+FROM `bunch_of_sqls_assignment`.`class_student`
+where student_id = 1
+
+
+7. SELECT all students who's first name starts with a:
+
+SELECT `student`.`student_id`,
+    `student`.`name_first`,
+    `student`.`name_last`,
+    `student`.`grade`,
+    
+`student`.`gpa`
+FROM `bunch_of_sqls_assignment`.`student`
+where name_first like 'a%'  
+
+Update Data:
+
+1. UPDATE teacher 1's name to Superman:
+
+UPDATE `bunch_of_sqls_assignment`.`teacher`
+SET
+
+`name_first` = 'Superman'
+
+WHERE `teacher_id` = 1;
+
+2. Update class 1's name to Underwater Basket Weaving:
+
+UPDATE `bunch_of_sqls_assignment`.`class`
+SET
+
+`name` = 'Underwater Basket Weaving'
+
+WHERE `class_id` = 1;
+
+
+3. Update Student 1's name to Wonder Woman:
+
+UPDATE `bunch_of_sqls_assignment`.`student`
+SET
+
+`name_first` = 'Wonder',
+`name_last` = 'Woman'
+
+WHERE `student_id` = 1;
+
+Delete Data:
+
+1. DELETE student 10:
+
+DELETE FROM `bunch_of_sqls_assignment`.`student`
+WHERE student_id = 10;
+SELECT * FROM bunch_of_sqls_assignment.student;
